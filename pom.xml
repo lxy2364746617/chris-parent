@@ -17,6 +17,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>chris-common</module>
+        <module>chris-nacos</module>
+        <module>chris-dubbo</module>
     </modules>
 
     <properties>
