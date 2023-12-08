@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: http://localhost:8848
+      discovery:
+        group: space
+        namespace: e227c5fe-8bdc-49a9-bddf-97fd4a32e11e
