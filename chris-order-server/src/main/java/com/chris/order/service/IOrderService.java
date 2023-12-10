@@ -7,4 +7,6 @@ public interface IOrderService extends IService<Order> {
 
     Order getOrderById(Long id);
 
+    Order createOrder(Long pid, Long userId);
+
 }

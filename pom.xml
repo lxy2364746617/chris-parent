@@ -19,7 +19,6 @@
         <module>chris-common</module>
         <module>chris-nacos</module>
         <module>chris-dubbo</module>
-        <module>chris-api</module>
         <module>chris-flowable</module>
         <module>chris-product-api</module>
         <module>chris-product-server</module>
