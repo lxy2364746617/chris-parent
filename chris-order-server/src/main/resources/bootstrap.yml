@@ -1,12 +1,23 @@
 spring:
+  profiles:
+    active: test
+  application:
+    name: chris-order-server
   cloud:
     nacos:
       discovery:
         server-addr: http://192.168.1.29:8848
+        namespace: e227c5fe-8bdc-49a9-bddf-97fd4a32e11e
+        group: CHRIS_TEST_GROUP
       config:
         file-extension: yaml
-        group: test
+        group: CHRIS_TEST_GROUP
         namespace: e227c5fe-8bdc-49a9-bddf-97fd4a32e11e
         shared-configs:
           - data-id: common-test.yaml
-            group: chris
+            group: SHARE_TEST_GROUP
+            refresh: true
+    sentinel:
+      transport:
+        dashboard: 192.168.1.29:10119  # 指定控制台服务的地址
+        port: 10100  # 和控制台交流的端口

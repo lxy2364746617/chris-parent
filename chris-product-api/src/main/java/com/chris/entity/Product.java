@@ -24,7 +24,7 @@ public class Product implements Serializable {
     private Double pPrice;
 
     @TableField("p_stock")
-    private Integer stock;
+    private Integer pStock;
 
     @TableField("create_time")
     private Date createTime;

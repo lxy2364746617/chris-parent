@@ -1,6 +1,7 @@
 package com.chris.order.controller;
 
 import com.chris.entity.Order;
+import com.chris.entity.Product;
 import com.chris.order.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,11 @@ public class OrderController {
     @PostMapping("/createOrder")
     public Order createOrder(@RequestParam("pid") Long pid, @RequestParam("userId") Long userId) {
         return orderService.createOrder(pid, userId);
+    }
+
+    @GetMapping("/getProductByOrder")
+    public Product getProductByOrder(@RequestParam("pid") Long pid) {
+        return orderService.getProductByOrder(pid);
     }
 
 }

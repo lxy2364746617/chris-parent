@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chris.entity.Order;
 import com.chris.entity.Product;
+import com.chris.order.feign.IProductService;
 import com.chris.order.mapper.OrderMapper;
 import com.chris.order.service.IOrderService;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     @Autowired
     RestTemplate restTemplate;
+
+    @Autowired
+    IProductService productService;
 
     @Override
     public Order getOrderById(Long id) {
@@ -42,6 +46,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         baseMapper.insert(order);
         log.info("创建订单成功, 订单信息为: {}", JSON.toJSONString(order));
         return order;
+    }
+
+    @Override
+    public Product getProductByOrder(Long pid) {
+        return productService.getProductById(pid);
     }
 
 }
